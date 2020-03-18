@@ -1,0 +1,61 @@
+<div class="box box-primary">
+    <div class="box-header with-border">
+      <h3 class="box-title">
+        (( isNew ? 'Editar Inmueble' : 'Agregar Inmueble'))
+      </h3>
+    </div>
+    <form role="form" name="form" class="form-validation"
+      ng-submit="onSaveEditInmuble()">
+      <div class="box-body">
+        <div class="row">
+            <div class="form-group col-xs-6">
+              <label for="duitxt"># Catastral </label>
+              <input type="text" class="form-control" ng-model="inmueble.numero_catastral" required
+                id="duitxt" placeholder="Digite el Número Catastral" />
+            </div>
+
+            <div class="form-group col-xs-3">
+              <label for="nittxt">Ancho Inmueble (mts)</label>
+              <input type="number" class="form-control" ng-model="inmueble.ancho_inmueble" required
+                id="nittxt" placeholder="Digite la ancho del inmueble" step="any" />
+            </div>
+
+            <div class="form-group col-xs-3">
+              <label for="nittxt">Largo Inmueble (mts)</label>
+              <input type="number" class="form-control" ng-model="inmueble.largo_inmueble" required
+                id="nittxt" placeholder="Digite la largo del inmueble" step="any" />
+            </div>
+
+
+            <div class="form-group col-xs-6">
+                <label for="teltxt"># escritura</label>
+                <input type="text" class="form-control" ng-model="inmueble.numero_escritura" required
+                  id="teltxt" placeholder="Digite el Número de la escritura" />
+            </div>
+            <div class="form-group col-xs-6">
+                <label for="teltxt">Metros de acera</label>
+                <input type="text" class="form-control" ng-model="inmueble.metros_acera" required
+                  id="teltxt" placeholder="Digite la medida de la acera (mts)" />
+            </div>
+            <div class="col-xs-12" ng-if='inmueble.direccion_inmueble'>
+              <h4>Dirección: </h4>
+              <h5>(( inmueble.direccion_inmueble ))</h5>
+            </div>
+        </div>
+        <div class="row" ng-hide='isNew'>
+        	<div style="width:900px;height:500px !important;position: relative; margin: 25px auto 0;">
+					  <ng-map style="height:100%""; center="[13.644366, -88.870235]" class="center-maps" zoom="16" on-click="updateMarkerPoints()">
+					    <marker position="((position.lat)), ((position.lng))" animation="Animation.BOUNCE"></marker>
+					  </ng-map>
+					</div>
+        </div>
+      </div>
+      <div class="box-footer">
+        <button type="submit" ng-disabled="form.$invalid" ng-if='inmueble.direccion_inmueble'
+          class="btn btn-primary">
+          (( isNew ? 'Editar' : 'Agregar' ))
+        </button>
+        <button type="button" ng-click="cerrar()" class="btn btn-danger pull-right">Cerrar</button>
+      </div>
+    </form>
+</div>
