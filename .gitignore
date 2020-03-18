@@ -1,0 +1,14 @@
+/node_modules
+/public/hot
+/storage/*
+/public/storage
+/public/avatars
+/storage/*.key
+/vendor
+/.idea
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+.env
+/package-lock.json
