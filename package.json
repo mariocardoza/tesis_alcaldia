@@ -27,7 +27,7 @@
     "jquery": "^3.2",
     "laravel-mix": "^1.0",
     "lodash": "^4.17.10",
-    "moment": "^2.22.2",
+    "moment": "^2.29.4",
     "ngmap": "^1.18.4",
     "raw-loader": "^0.5.1",
     "restangular": "^1.6.1",
